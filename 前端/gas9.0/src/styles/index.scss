@@ -1,0 +1,927 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './btn.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Chinese Quote, -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, .2);
+}
+
+label {
+  font-weight: 600;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  display: block;
+  width: 100%;
+
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+aside {
+  background: #eef1f6;
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  display: block;
+  line-height: 32px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+//main-container全局样式
+
+// 全局dialog 垂直居中
+.el-dialog {
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  margin: 0 !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: calc(100% - 50px);
+  overflow: hidden;
+
+  .el-dialog__body {
+    max-height: calc(100vh - 150px);
+    overflow-y: scroll;
+    //height: ;
+    flex: 1;
+  }
+}
+
+
+.app-container {
+  padding: 20px;
+  margin: 10px;
+  background: #fff;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+.text-center {
+  text-align: center
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-container {
+  padding-bottom: 10px;
+
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+
+  .search-item {
+    margin-right: 10px;
+    width: 190px;
+  }
+
+  .date-range-item {
+    width: 240px;
+  }
+}
+
+.table-operation {
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+
+.el-button:not(.is-circle, .is-round),
+.el-input__inner {
+  border-radius: 3px !important;
+}
+
+.el-input {
+  font-size: .85rem !important;
+
+}
+
+// .el-button {
+//   margin-left: 0 !important;
+//   margin-right: 10px;
+// }
+.el-submenu__title {
+  i {
+    color: rgba(255, 255, 255, 0.7);
+    margin-right: 10px !important;
+    margin-left: 10px;
+  }
+}
+
+.el-tooltip__popper {
+  max-width: 500px !important;
+  font-size: .88rem;
+}
+
+.no-perm {
+  margin-top: -6px
+}
+
+
+//main-container全局样式
+.app-container {
+  padding: 20px;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+
+.text-center {
+  text-align: center
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-container {
+  padding-bottom: 10px;
+
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+}
+
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+
+
+// 全局定义add-------------------------------------------------------------------------
+
+// 去除input数字框的箭头
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.vue-treeselect__control {
+  height: 28px !important;
+}
+
+.vue-treeselect__single-value {
+  line-height: 28px !important;
+}
+
+.vue-treeselect__placeholder {
+  line-height: 28px !important;
+}
+
+
+.qc-main {
+  padding: 10px;
+  background-color: rgb(240, 242, 245);
+  position: relative;
+  min-height: calc(100vh - 84px);
+}
+
+.el-dialog__header {
+  background: #F2F6FC;
+}
+
+
+.el-card__body {
+  overflow: hidden;
+}
+
+/*全局信息展示*/
+.jh-text {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  /* margin-bottom的距离设置 */
+  .el-form-item--mini.el-form-item {
+    margin-bottom: 0;
+  }
+
+  .el-form-item {
+    width: calc(100% / 2);
+    padding: 0 5px;
+    box-sizing: border-box;
+
+    .el-form-item__label {
+      font-size: 10px;
+      font-weight: normal;
+      padding: 0;
+      color: #909399;
+      transform: scale(0.9) translate(-4px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      height: 28px;
+      line-height: 28px;
+    }
+
+    .el-form-item__content {
+      p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 24px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #000;
+      }
+    }
+
+    .el-select {
+      width: 100%;
+    }
+
+    .el-date-editor {
+      width: 100%;
+
+      .el-input__inner {
+        padding-right: 0;
+      }
+
+      .el-input__suffix {
+        right: 0;
+      }
+    }
+
+    .el-input-group__append {
+      padding: 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+/* 区块标题 */
+.subTitle {
+  font-size: 14px;
+  height: 28px;
+  line-height: 28px;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: top;
+
+  &:before {
+    width: 3px;
+    height: 14px;
+    display: inline-block;
+    background: #1890ff;
+    margin: 7px 5px;
+    content: "▉";
+    overflow: hidden;
+    border-radius: 1px;
+    vertical-align: top;
+  }
+}
+
+// 全局dialog 调整
+.el-dialog {
+  .el-dialog__header {
+    padding: 10px 20px;
+
+    .el-dialog__title {
+      font-size: 16px;
+    }
+
+    .el-dialog__headerbtn {
+      top: 15px
+    }
+  }
+
+  .el-dialog__body {
+    padding: 15px;
+  }
+}
+
+// 全局调整分页样式
+.pagination-container {
+  padding: 15px 0 !important;
+}
+
+/* card 头部样式设置 */
+.el-card {
+  position: relative;
+
+  .card-tool-bar {
+    display: block;
+    float: right;
+    position: relative;
+
+    .el-button {
+      margin-left: 0;
+    }
+  }
+
+  .el-card__header {
+    padding: 5px 15px;
+    line-height: 28px;
+  }
+
+  .card-title {
+    @extend .subTitle
+  }
+
+  .view-more {
+    float: right;
+  }
+
+  .right-text {
+    float: right;
+    font-size: 12px;
+    color: #C0C4CC;
+  }
+}
+
+.width100 {
+  width: 100% !important;
+}
+
+.width50 {
+  width: 50% !important;
+}
+
+.no-border {
+  border: none;
+}
+
+.btnBox {
+  margin-top: 10px;
+  text-align: center;
+  overflow: hidden;
+
+  .el-button {
+    width: 46%;
+    display: inline-block;
+  }
+}
+
+.redFont {
+  color: $pink;
+}
+
+/* 收费结果 */
+.rechargeResult {
+  overflow: hidden;
+  margin-top: 10px;
+  padding: 5px;
+  background: #f5f5f5;
+}
+
+.listItem {
+  margin-bottom: 10px;
+}
+
+// 工作区高度
+.workHeight {
+  height: calc(100vh - 145px);
+}
+
+// 右侧card信息表
+
+.moreInfo {
+  background: #FFF;
+
+  .el-tabs__header {
+    background: #fafafa;
+
+    .el-icon-close {
+      &:before {
+        content: "!";
+        color: white;
+        background: $pink;
+        text-align: center;
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        font-size: 12px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+      }
+    }
+  }
+
+  .el-tabs__content {
+    @extend .workHeight;
+    padding: 10px;
+  }
+
+  .is-active {
+    background: #e8f4ff;
+    color: $primary;
+  }
+
+
+  .el-tab-pane {
+    overflow-y: scroll;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  .frameBody {
+    height: calc(100vh - 280px);
+    overflow-y: scroll;
+  }
+
+  .frameFormBody {
+    height: calc(100vh - 220px);
+    overflow-y: auto !important;
+  }
+
+}
+
+// 设置右侧卡片信息 菜单的margin-right
+.el-tabs--left .el-tabs__header.is-left {
+  margin-right: 0 !important;
+}
+
+
+.butGroup {
+  .el-button {
+    margin: 0;
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+// ================================================= lilb =====================================================
+
+.table-title {
+  overflow: hidden;
+  margin-bottom: 10px;
+  color: $text-color;
+  font-weight: bold;
+}
+
+/*全局表单样式*/
+.qc-form {
+  padding: 10px 0;
+
+  .el-form-item {
+    width: calc(100% / 3);
+    // float: left;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    position: relative;
+    // display: block;
+    margin-right: 0;
+    margin-left: 0;
+
+    .el-select {
+      width: 100%;
+      display: block;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .el-date-editor {
+      width: 100%;
+    }
+
+    .el-form-item__label {
+      font-size: 10px;
+      font-weight: normal;
+      padding: 0;
+      color: #909399;
+      transform: scale(0.9) translate(-4px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      height: 28px;
+      line-height: 28px;
+    }
+  }
+
+  &.el-form--inline {
+    .el-form-item {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .checkbox-item {
+    .el-form-item__content {
+      background: #f7f7f7;
+      padding: 0 10px;
+    }
+  }
+
+  .radio-group-item {
+    .el-form-item__content {
+      background: #f7f7f7;
+      padding: 0 10px;
+    }
+  }
+
+  .save-btn-box {
+    // float: right;
+    // margin-top: -2px;
+    vertical-align: bottom;
+
+    .save-btn {
+      width: 100%;
+      font-size: 14px;
+      // padding: 8px 15px;
+    }
+  }
+}
+
+.disabled-form {
+  .el-form-item {
+    .el-input {
+      &.is-disabled {
+        .el-input__inner {
+          padding: 0;
+          color: $text-color;
+          background-color: transparent;
+          cursor: default;
+          border: none;
+
+          &::placeholder {
+            // color: transparent;
+          }
+        }
+        .el-input__prefix {
+          display: none;
+        }
+
+        .el-input__suffix {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.flex-form {
+  display: flex;
+
+  .el-form-item {
+    flex: 1;
+  }
+}
+
+// 仅展示信息form
+.show-info-form {
+  .el-form-item {
+    margin-bottom: 10px !important;
+  }
+
+  .el-form-item__content {
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 24px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #000;
+    }
+  }
+}
+
+.search-box {
+  margin-bottom: 0 !important;
+}
+
+.operation-box {
+  overflow: hidden;
+
+  .el-input {
+    width: auto !important;
+  }
+
+  .operation-btn-box {
+    .el-button {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+// 全局搜索表单
+.qc-search-form {
+  .el-form-item--mini.el-form-item {
+    margin-bottom: 10px;
+  }
+
+  // .el-input, .el-select, .el-button, .el-date-picker{
+  //   margin: auto !important;
+  // }
+}
+
+.el-table {
+
+  // border: 1px solid #eee;
+  // border-bottom: none;
+  thead {
+    tr {
+      background: #f5f7fa;
+
+      th {
+        background: transparent;
+      }
+    }
+  }
+
+  .current-row {
+    td {
+      background-color: rgba(64, 158, 255, .5) !important;
+      color: white !important;
+    }
+  }
+
+  .highlight-row {
+    td {
+      background-color: rgba(64, 158, 255, .5) !important;
+      color: white !important;
+    }
+  }
+
+  .danger-row {
+    td {
+      background-color: lighten($red, 30%) !important;
+      color: white !important;
+    }
+  }
+
+  .success-row {
+    td {
+      // background-color: lighten(#13ce66, 10%) !important;
+      background-color: darken($success, 3%) !important;
+      // background-color: #13ce66 !important;
+      color: white !important;
+    }
+  }
+}
+
+
+.text {
+  &-left {
+    text-align: left;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+
+  &-danger {
+    color: $danger;
+  }
+
+  &-primary {
+    color: $primary;
+  }
+
+  &-success {
+    color: $success;
+  }
+
+  &-warning {
+    color: $warning;
+  }
+}
+
+.border {
+  &-right {
+    border-right: 1px solid $border-color;
+  }
+
+  &-left {
+    border-left: 1px solid $border-color;
+  }
+
+  &-top {
+    border-top: 1px solid $border-color;
+  }
+
+  &-bottom {
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.hint-text {
+  color: $warning;
+  font-size: 12px;
+  margin: 5px 0;
+  line-height: normal;
+}
+
+.el-loading-spinner {
+  .el-icon-loading {
+    font-size: 40px;
+  }
+
+  .el-icon-check {
+    font-size: 40px;
+    color: $success;
+  }
+
+  .el-loading-text {
+    font-size: 16px !important;
+  }
+}
