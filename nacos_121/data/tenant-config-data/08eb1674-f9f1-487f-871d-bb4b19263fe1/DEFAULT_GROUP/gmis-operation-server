@@ -1,0 +1,18 @@
+gmis:
+  database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+  swagger:
+    docket:
+      securityed:
+        title: 安检模块服务
+        base-package: com.cdqckj.gmis.operation.controller
+
+server:
+  port: 8775
+spring:
+  # 资源信息
+  messages:
+    # 国际化资源文件路径
+    basename: i18n/messages,i18n/common/messages
+

@@ -1,0 +1,21 @@
+gmis:
+  database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+  swagger:
+    docket:
+      invoice:
+        title: 发票服务
+        base-package: com.cdqckj.gmis.invoice.controller
+  e-invoice:
+    api:
+      rh.invoice.url: https://www.chinaeinv.com:943/igs/api/invoiceApi.jspa
+      rh.order.url: https://www.chinaeinv.com:943/igs/api/orderApi.jspa
+      rh.invoice.callbackUrl: http://222.212.93.70:60113/api/bizcenter/bill/rhKpCallback       
+
+logging:
+  io.seata: debug
+  org.springframework.cloud.alibaba.seata.web: debug
+
+server:
+  port: 8783

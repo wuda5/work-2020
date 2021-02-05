@@ -1,0 +1,24 @@
+  gmis:
+    database:
+      isSeata: false
+      multiTenantType: DATASOURCE
+    swagger:
+      docket:
+        device:
+          title: 气表服务
+          base-package: com.cdqckj.gmis.gasmeter.controller
+        node:  
+          title: 节点服务
+          base-package: com.cdqckj.gmis.node.controller
+
+  logging:
+    io.seata: debug
+    org.springframework.cloud.alibaba.seata.web: debug
+
+
+  server:
+    port: 8788
+
+
+  ## 请在nacos中新建一个名为: gmis-device-server.yml 的配置文件，并将： gmis-device-server/src/main/resources/gmis-device-server.yml 配置文件的内容移动过去
+  ## 然后删除此文件！！！

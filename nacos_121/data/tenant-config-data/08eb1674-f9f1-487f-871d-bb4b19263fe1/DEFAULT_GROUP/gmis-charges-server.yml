@@ -1,0 +1,16 @@
+gmis:
+  database:
+      isSeata: false
+      multiTenantType: DATASOURCE
+  swagger:
+    docket:
+      charges:
+        title: 收费模块服务
+        base-package: com.cdqckj.gmis.charges.controller
+spring:
+  # 资源信息
+  messages:
+    # 国际化资源文件路径
+    basename: i18n/messages,i18n/common/messages
+server:
+  port: 8785

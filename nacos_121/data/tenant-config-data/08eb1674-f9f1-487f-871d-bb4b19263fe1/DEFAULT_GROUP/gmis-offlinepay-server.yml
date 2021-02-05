@@ -1,0 +1,9 @@
+gmis:
+  swagger:
+    docket:
+      offlinepay:
+        title: 线下支付服务服务
+        base-package: com.cdqckj.gmis.offlinepay.controller
+
+server:
+  port: 8782

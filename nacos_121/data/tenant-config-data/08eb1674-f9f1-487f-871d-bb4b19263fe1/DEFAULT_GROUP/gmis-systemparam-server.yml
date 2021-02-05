@@ -1,0 +1,12 @@
+gmis:
+  swagger:
+    enabled: true
+    docket:
+      systemparam:
+        title: 系统参数配置服务
+        base-package: com.cdqckj.gmis.systemparam.controller
+ribbon:
+  eureka:
+    enabled: true
+server:
+  port: 8774

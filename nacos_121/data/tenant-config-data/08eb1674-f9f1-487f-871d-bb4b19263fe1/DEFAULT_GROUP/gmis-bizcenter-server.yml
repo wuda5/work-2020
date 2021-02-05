@@ -1,0 +1,69 @@
+gmis:
+  database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+  swagger:
+    enabled: true
+    docket:
+      configure:
+        title: 运营配置模块
+        base-package: com.cdqckj.gmis.bizcenter.operation.config.controller
+      device:
+        title: 设备服务模块
+        base-package: com.cdqckj.gmis.bizcenter.device.archives.controller
+      systemparam:
+        title: 系统配置模块
+        base-package: com.cdqckj.gmis.bizcenter.sys.config.controller
+      userarchive:
+        title: 客户档案模块
+        base-package: com.cdqckj.gmis.bizcenter.customer.archives.controller
+      devicearchive:
+        title: 设备档案模块
+        base-package: com.cdqckj.gmis.bizcenter.device.archives.controller
+      install:
+        title: 报装模块
+        base-package: com.cdqckj.gmis.bizcenter.installed.controller
+      securitycheck:
+        title: 安检模块
+        base-package: com.cdqckj.gmis.bizcenter.securitycheckrecord.controller
+      operation:
+        title: 运行维护模块
+        base-package: com.cdqckj.gmis.bizcenter.operation.controller
+
+      tempcounter:
+        title: 临时综合
+        base-package: com.cdqckj.gmis.bizcenter.temp.counter.controller
+      charges:
+        title: 收费模块
+        base-package: com.cdqckj.gmis.bizcenter.charges.controller
+      readmeter:
+        title: 抄表服务
+        base-package: com.cdqckj.gmis.bizcenter.read.meter.controller
+      dailycounter:
+        title: 日常综合
+        base-package: com.cdqckj.gmis.bizcenter.daily.counter.controller
+      bill:
+        title: 票据发票
+        base-package: com.cdqckj.gmis.bizcenter.invoice.controller
+      adjustprice:
+        title: 调价补差
+        base-package: com.cdqckj.gmis.bizcenter.adjust.price.controller
+      sts:
+        title: 统计模块
+        base-package: com.cdqckj.gmis.bizcenter.sts.cotroller
+      iot:
+        title: 远传表模块
+        base-package: com.cdqckj.gmis.bizcenter.iot.controller
+      card:
+        title: ICID卡
+        base-package:  com.cdqckj.gmis.bizcenter.card.controller
+      summaryBill:
+        title: 扎帐
+        base-package: com.cdqckj.gmis.bizcenter.summary.bill.controller    
+      
+logging:
+  io.seata: debug
+  org.springframework.cloud.alibaba.seata.web: debug
+
+server:
+  port: 80

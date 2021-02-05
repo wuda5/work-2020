@@ -1,0 +1,16 @@
+gmis:
+  database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+  swagger:
+    docket:
+      admincenter:
+        title: 后台管理聚合服务
+        base-package: com.cdqckj.gmis.appmanager.controller
+
+server:
+  port: 8801
+
+
+## 请在nacos中新建一个名为: gmis-admincenter-server.yml 的配置文件，并将： gmis-admincenter-server/src/main/resources/gmis-admincenter-server.yml 配置文件的内容移动过去
+## 然后删除此文件！！！

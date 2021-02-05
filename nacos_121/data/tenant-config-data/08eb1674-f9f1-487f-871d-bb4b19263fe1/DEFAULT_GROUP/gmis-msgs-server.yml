@@ -1,0 +1,35 @@
+gmis:
+  swagger:
+    enabled: true
+    docket:
+      sms:
+        title: 短信模块
+        base-package: com.cdqckj.gmis.sms.controller
+      msgs:
+        title: 消息模块
+        base-package: com.cdqckj.gmis.msgs.controller
+      mail:
+        title: 邮件模块
+        base-package: com.cdqckj.gmis.mail.controller
+  cache:
+    type: REDIS   # CAFFEINE
+    def:
+      keyPrefix: ${spring.profiles.active}
+    configs:
+      gmis:
+        timeToLive: 1h
+        keyPrefix: aaa
+      test:
+        timeToLive: 2h
+  provider:
+    type: TENCENT
+    tencent:
+      app-id: 1400408010
+      app-secret: 4ef417bd89ccb49a876f6f698940bb4d
+      secret-id: AKIDD7oMaYmgqbu73myPJly4tSoujHtFLbOv
+      secret-key: g7JH0d1B9oCNaaT4RQAbl5b090kETRhc
+      regin-name: ap-chengdu
+      bucket-name: file-test-1259370834
+      path: https://file-test-1259370834.cos.ap-chengdu.myqcloud.com/
+server:
+  port: 8768

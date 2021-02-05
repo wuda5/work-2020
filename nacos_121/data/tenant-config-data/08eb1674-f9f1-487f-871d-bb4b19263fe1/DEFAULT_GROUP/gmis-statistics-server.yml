@@ -1,0 +1,12 @@
+gmis:
+  database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+  swagger:
+    docket:
+      statistics:
+        title: 统计服务服务
+        base-package: com.cdqckj.gmis.statistics.statistics.controller
+
+server:
+  port: 8999

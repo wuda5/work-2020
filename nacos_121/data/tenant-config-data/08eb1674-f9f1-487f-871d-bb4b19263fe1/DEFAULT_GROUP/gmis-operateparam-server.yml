@@ -1,0 +1,19 @@
+gmis:
+  database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+  swagger:
+    docket:
+      operateparam:
+        title: 运营配置模块
+        base-package: com.cdqckj.gmis.operateparam.controller
+      systemparam:
+        title: 系统配置模块
+        base-package: com.cdqckj.gmis.systemparam.controller
+
+logging:
+  io.seata: debug
+  org.springframework.cloud.alibaba.seata.web: debug
+
+server:
+  port: 8770

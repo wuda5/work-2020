@@ -1,0 +1,25 @@
+gmis:
+  database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+  swagger:
+    enabled: true
+    docket:
+      operationcenter:
+        title: 抄表app模块
+        base-package: com.cdqckj.gmis.operationcenter.readmeter.controller
+      installed:
+        title: 报装app模块
+        base-package: com.cdqckj.gmis.operationcenter.app.installed.controller
+      securityed:
+        title: 安检app模块
+        base-package: com.cdqckj.gmis.operationcenter.app.securityed.controller 
+      operation:
+        title: 运维工单app模块
+        base-package: com.cdqckj.gmis.operationcenter.app.operation.controller     
+logging:
+  io.seata: debug
+  org.springframework.cloud.alibaba.seata.web: debug
+
+server:
+  port: 8805

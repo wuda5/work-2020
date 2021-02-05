@@ -1,0 +1,30 @@
+gmis:
+  injection:
+  # 是否启用 远程数据 手动注入
+  enabled: true
+  # 是否启用 远程数据 注解注入
+  aop-enabled: true
+  database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+  swagger:
+    docket:
+      userarchive:
+        title: 用户档案模块
+        base-package: com.cdqckj.gmis.userarchive.controller
+      devicearchive:
+        title: 设备档案模块
+        base-package: com.cdqckj.gmis.devicearchive.controller
+      sim:
+        title: 卡表档案模块
+        base-package: com.cdqckj.gmis.sim.controller
+      nodearchive:
+        title: 节点档案模块
+        base-package: com.cdqckj.gmis.nodearchive.controller
+
+logging:
+  io.seata: debug
+  org.springframework.cloud.alibaba.seata.web: debug
+
+server:
+  port: 8769

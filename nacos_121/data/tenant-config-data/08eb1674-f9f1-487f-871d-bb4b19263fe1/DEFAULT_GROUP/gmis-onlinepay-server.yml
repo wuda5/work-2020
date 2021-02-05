@@ -1,0 +1,27 @@
+gmis:
+  database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+  swagger:
+    docket:
+       pay:
+        title: 支付服务
+        base-package: com.cdqckj.gmis.pay.controller
+  service:
+    appId: wx5408d1ddde603ba9
+    mchId: 1603115705
+    apiKey: LIUSHI123456789LIUSHI12345678912
+    defaultUrl: http://weixinpaytestpay.free.idcfengye.com/pay/onlinepay/notify
+    apiV3key: e1dea31d334f48948313d90ac71efabb
+    mchSerialNo: 2339B893C2371AC03D7EB6A56840AFEB595F1C8E
+    appSubAppid: ""
+    appletSubAppid: "" 
+server:
+  port: 8799
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        metadata:
+          grayversion: 1.0

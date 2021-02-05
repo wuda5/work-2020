@@ -1,0 +1,16 @@
+gmis:
+  database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+  swagger:
+    docket:
+      temporary:
+        title: 柜台临时服务模块
+        base-package: com.cdqckj.gmis.biztemporary.controller
+
+logging:
+  io.seata: debug
+  org.springframework.cloud.alibaba.seata.web: debug
+
+server:
+  port: 8771

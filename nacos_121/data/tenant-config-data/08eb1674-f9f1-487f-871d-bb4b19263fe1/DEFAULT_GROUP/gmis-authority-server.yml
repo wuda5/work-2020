@@ -1,0 +1,28 @@
+# 在这里配置 权限服务 所有环境都能使用的配置
+gmis:
+ database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+ swagger:
+    enabled: true
+    docket:
+      auth:
+        title: 权限模块
+        base-package: com.cdqckj.gmis.authority.controller.auth
+      common:
+        title: 公共模块
+        base-package: com.cdqckj.gmis.authority.controller.common
+      core:
+        title: 组织模块
+        base-package: com.cdqckj.gmis.authority.controller.core
+      tenant:
+        title: 租户模块-运维平台
+        base-package: com.cdqckj.gmis.tenant.controller
+
+spring:
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+
+server:
+  port: 8764

@@ -1,0 +1,21 @@
+gmis:
+  database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+  swagger:
+    docket:
+      calculate:
+        title: 秦川物联网模块
+        base-package: com.cdqckj.gmis.iot.qc.controller
+  #传感系统3.0
+  iot:
+    baseAddress: http://222.212.93.70:50086/qnms/V1_0_0/
+    token_time: 1440
+    subscribe_cache_day: 2
+  #远传系统1.0
+  cis:
+    address: http://172.16.92.156:8760/api/iotQc/data/
+
+
+server:
+  port: 8776

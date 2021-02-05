@@ -1,0 +1,1 @@
+sh bin/shutdown.sh

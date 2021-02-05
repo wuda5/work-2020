@@ -1,0 +1,252 @@
+gmis:
+  log:
+    enabled: false
+
+spring:
+  autoconfigure:
+    # cao，升级到1.2.0后，gateway要排除这个依赖，排查了2个小时 2020年04月21日00:51:18
+    exclude: io.seata.integration.http.HttpAutoConfiguration
+  cloud:
+    gateway:
+      x-forwarded:
+        prefixEnabled: false
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+        - id: oauth
+          uri: lb://gmis-oauth-server
+          predicates:
+            - Path=/oauth/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: file
+          uri: lb://gmis-file-server
+          predicates:
+            - Path=/file/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: authority
+          uri: lb://gmis-authority-server
+          predicates:
+            - Path=/authority/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: msgs
+          uri: lb://gmis-msgs-server
+          predicates:
+            - Path=/msgs/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: demo
+          uri: lb://gmis-demo-server
+          predicates:
+            - Path=/demo/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: order
+          uri: lb://gmis-order-server
+          predicates:
+            - Path=/order/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: pay
+          uri: lb://gmis-pay-server
+          predicates:
+            - Path=/pay/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'  
+        - id: configure
+          uri: lb://gmis-operateparam-server
+          predicates:
+            - Path=/operateparam/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: bizcenter
+          uri: lb://gmis-bizcenter-server
+          predicates:
+            - Path=/bizcenter/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: archive
+          uri: lb://gmis-userarchive-server
+          predicates:
+            - Path=/userarchive/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'          
+
+        - id: device
+          uri: lb://gmis-device-server
+          predicates:
+            - Path=/device/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'                        
+        - id: systemparam
+          uri: lb://gmis-systemparam-server
+          predicates:
+            - Path=/systemparam/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: readmeter
+          uri: lb://gmis-readmeter-server
+          predicates:
+            - Path=/readmeter/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: offlinepay
+          uri: lb://gmis-offlinepay-server
+          predicates:
+            - Path=/offlinepay/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: installed
+          uri: lb://gmis-installed-server
+          predicates:
+            - Path=/installed/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: biztemporary
+          uri: lb://gmis-business-temporary
+          predicates:
+            - Path=/biztemporary/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: securitycheck
+          uri: lb://gmis-security-check
+          predicates:
+            - Path=/securitycheck/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: operation
+          uri: lb://gmis-operation
+          predicates:
+            - Path=/operation/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: admincenter
+          uri: lb://gmis-admincenter-server
+          predicates:
+            - Path=/admincenter/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: adminmanager
+          uri: lb://gmis-adminmanager-server
+          predicates:
+            - Path=/adminmanager/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: customercenter
+          uri: lb://gmis-customercenter-server
+          predicates:
+            - Path=/customercenter/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+        - id: operationcenter
+          uri: lb://gmis-operationcenter-server
+          predicates:
+            - Path=/operationcenter/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'   
+        - id: installed
+          uri: lb://gmis-installed-server
+          predicates:
+            - Path=/installed/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'               
+server:
+  port: 8760
+  servlet:
+    context-path: /api  # = server.servlet.context-path

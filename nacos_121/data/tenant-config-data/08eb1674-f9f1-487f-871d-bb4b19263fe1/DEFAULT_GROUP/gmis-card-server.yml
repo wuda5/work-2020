@@ -1,0 +1,22 @@
+server:
+  port: 8784
+
+gmis:
+  database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+  swagger:
+    enabled: true
+    title: 气表卡服务
+    base-package: com.cdqckj.gmis
+  card: 
+    card-core-conf: "{21:'10,11,12',51:'0,1,2,3,4'}"
+
+spring:
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+
+authentication:
+  expire: 28800               # token有效期为8小时
+  refreshExpire: 86400        # 刷新token有效期为24小时

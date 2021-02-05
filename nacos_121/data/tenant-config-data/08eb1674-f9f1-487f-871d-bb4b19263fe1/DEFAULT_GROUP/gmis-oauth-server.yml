@@ -1,0 +1,20 @@
+server:
+  port: 8773
+
+gmis:
+  database:
+    isSeata: false
+    multiTenantType: DATASOURCE
+  swagger:
+    enabled: true
+    title: 认证服务
+    base-package: com.cdqckj.gmis
+
+spring:
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+
+authentication:
+  expire: 28800               # token有效期为8小时
+  refreshExpire: 86400        # 刷新token有效期为24小时
